@@ -1,0 +1,93 @@
+header {
+  font-size: larger;
+  font-weight: bold;
+  font-family: Arial;
+}
+
+h1 {
+  font-family: sans-serif;
+  font-size: 60px;
+  font-weight: bold;
+  text-shadow: 4px 3px white;
+  color: #003759 ;
+  margin-left: 50px ;
+  margin-right: 50px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+h2 {
+  color: blue;
+  font-style: italic;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 35px;
+  margin-left: 80px;
+}
+
+.whiterice {
+  margin-top: 200px;
+  margin-bottom: 100px;
+  font-style: italic;
+  font-size: large;
+  font-family: Helvetica, sans-serif;
+}
+
+.sproutedcaliforniarice {
+  margin-top: 200px;
+  margin-bottom: 100px;
+  font-style: italic;
+  font-size: large;
+  font-family: Helvetica, sans-serif;
+}
+
+body{
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.hide {
+    max-height: 0 !important;
+}
+
+.dropdown{
+	border: 0.1em solid black;
+	width: 10em;
+	margin-bottom: 1em;
+}
+
+.dropdown .title{
+	margin: .3em .3em .3em .3em;
+	width: 100%;
+}
+
+.dropdown .title .fa-angle-right{
+	float: right;
+	margin-right: .7em;
+	transition: transform .3s;
+}
+
+.dropdown .menu{
+	transition: max-height .5s ease-out;
+	max-height: 20em;
+	overflow: hidden;
+}
+
+.dropdown .menu .opciones{
+	margin: .3em .3em .3em .3em;
+	margin-top: 0.3em;
+}
+
+.dropdown .menu .opcionesS:hover{
+	background: rgba(0,0,0,0.2);
+}
+
+.pointerCursor:hover{
+	cursor: pointer;
+}
+
+.rotate-90{
+	transform: rotate(90deg);
+}
+
+.oculto {
+  display: none;
+}
