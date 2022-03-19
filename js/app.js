@@ -1,5 +1,5 @@
 window.onload = () => {
-    alert(`JavaScript Works`);
+    alert(`JavaScript Works 1`);
 };
 
 var inrice = document.getElementById("inputtext");
