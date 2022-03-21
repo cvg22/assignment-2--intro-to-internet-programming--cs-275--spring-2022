@@ -18,10 +18,15 @@
   },
   "homepage": "https://github.com/code-warrior/assignment-2--intro-to-internet-programming--cs-275--fall-2021#readme",
   "devDependencies": {
-    "gulp-html": "^3.4.0",
-    "gulp-htmlmin": "^5.0.1"
+    "gulp-html": "^3.5.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-stylelint": "^13.0.0",
+    "stylelint": "^14.6.0"
   },
   "dependencies": {
-    "gulp": "^4.0.2"
+    "browser-sync": "^2.27.9",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-eslint": "^6.0.0"
   }
 }

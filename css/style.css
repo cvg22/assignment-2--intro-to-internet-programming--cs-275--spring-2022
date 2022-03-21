@@ -1,25 +1,23 @@
 header {
   font-size: larger;
-  font-weight: bold;
-  font-family: Arial;
+  font-weight: 100;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 h1 {
   font-family: sans-serif;
   font-size: 60px;
-  font-weight: bold;
+  font-weight: 100;
   text-shadow: 4px 3px white;
-  color: #003759 ;
-  margin-left: 50px ;
-  margin-right: 50px;
-  margin-top: 50px;
-  margin-bottom: 10px;
+  color: #003759;
+  margin: 50px 50px 50px 10px;
 }
+
 h2 {
   color: blue;
   font-style: italic;
-  font-weight: bold;
-  font-family: "Times New Roman", Times, serif;
+  font-weight: 100;
+  font-family: 'Times New Roman', Times, serif;
   font-size: 35px;
   margin-left: 80px;
 }
@@ -40,10 +38,9 @@ h2 {
   font-family: Helvetica, sans-serif;
 }
 
-body{
-	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-
 
 .oculto {
   display: none;
