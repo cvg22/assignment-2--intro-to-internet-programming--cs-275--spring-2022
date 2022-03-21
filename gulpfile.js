@@ -4,8 +4,16 @@ const { src, dest, series, watch } = require(`gulp`),
     htmlCompressor = require(`gulp-htmlmin`),
     CSSLinter = require(`gulp-stylelint`),
     jsLinter = require(`gulp-eslint`),
+    babel = require(`gulp-babel`),
     browserSync = require(`browser-sync`),
+    jsCompressor = require(`gulp-uglify`),
+    cleanCSS = require('gulp-clean-css'),
+    cache = require('gulp-cache'),
     reload = browserSync.reload;
+
+let clearCache = () => {
+      return cache.clearAll();
+}
 
 let browserChoice = `default`;
 
@@ -43,35 +51,99 @@ let compressHTML = () => {
         .pipe(dest(`prod`));
 };
 
+let compressCSS = () => {
+  return src('css/*.css')
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(dest('prod/css'));
+};
+
+let transpileJSForProd = () => {
+    return src(`js/*.js`)
+        .pipe(babel())
+	      .pipe(jsCompressor())
+        .pipe(dest(`prod/js`));
+};
 
 let serve = () => {
     browserSync({
         notify: true,
-        reloadDelay: 100,
+        browser: browserChoice,
+        reloadDelay: 50,
         server: {
             baseDir: `temp`
         }
     });
 
-    watch(`html/*.html`, validateHTML)
+    watch(`js/*.js`, series(lintJS, transpileJSForDev))
         .on(`change`, reload);
 
     watch(`css/*.css`, lintCSS)
         .on(`change`, reload);
 
-    watch(`js/*.js`, lintJS)
+    watch(`html/*.html`, validateHTML)
         .on(`change`, reload);
 };
 
+async function clean() {
+    let fs = require(`fs`),
+        i,
+        foldersToDelete = [`temp`,`prod`];
+
+    for (i = 0; i < foldersToDelete.length; i++) {
+        try {
+            fs.accessSync(foldersToDelete[i], fs.F_OK);
+            process.stdout.write(`\n\tThe ` + foldersToDelete[i] +
+                ` directory was found and will be deleted.\n`);
+            del(foldersToDelete[i]);
+        } catch (e) {
+            process.stdout.write(`\n\tThe ` + foldersToDelete[i] +
+                ` directory does NOT exist or is NOT accessible.\n`);
+        }
+    }
+
+    process.stdout.write(`\n`);
+}
+
+async function listTasks () {
+    let exec = require(`child_process`).exec;
+
+    exec(`gulp --tasks`, function (error, stdout, stderr) {
+        if (null !== error) {
+            process.stdout.write(`An error was likely generated when invoking ` +
+                `the “exec” program in the default task.`);
+        }
+
+        if (`` !== stderr) {
+            process.stdout.write(`Content has been written to the stderr stream ` +
+                `when invoking the “exec” program in the default task.`);
+        }
+
+        process.stdout.write(`\n\tThis default task does ` +
+            `nothing but generate this message. The ` +
+            `available tasks are:\n\n${stdout}`);
+    });
+}
+
+exports.default = listTasks;
+exports.clean = clean;
 exports.validateHTML = validateHTML;
 exports.lintCSS = lintCSS;
 exports.lintJS = lintJS;
 exports.transpileJSForDev = transpileJSForDev;
+exports.clearCache = clearCache;
 exports.compressHTML = compressHTML;
-exports.HTMLProcessing = series(validateHTML, compressHTML);
+exports.compressCSS = compressCSS;
+exports.transpileJSForProd = transpileJSForProd;
+
 exports.serve = series(
     validateHTML,
     lintCSS,
+    lintJS,
     transpileJSForDev,
     serve
 );
+
+exports.prod = series(
+          compressHTML,
+		      compressCSS,
+		      transpileJSForProd);

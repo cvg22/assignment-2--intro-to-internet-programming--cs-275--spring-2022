@@ -1,6 +1,6 @@
-window.onload = () => {
+/*window.onload = () => {
     alert(`JavaScript Works 1`);
-};
+};*/
 
 var inrice = document.getElementById(`inputtext`);
 var outwater = document.getElementById(`outputtext`);
