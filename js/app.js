@@ -22,17 +22,26 @@ function ricechoice() {
         white = true;
         inrice.value = ``;
         outwater.value = ``;
+        document.getElementById(`quantityrice`).hidden = false;
+        document.getElementById(`quantitywater`).hidden = false;
+        document.getElementById(`inputtext`).focus();
     }
     else {
-        document.getElementById(`opciones`).innerHTML =
-        document.getElementById(`sproutedcaliforniarice`).innerHTML;
-        white = false;
-        inrice.value = ``;
-        outwater.value = ``;
+        if (eleccion === `sproutedcaliforniarice`) {
+            document.getElementById(`opciones`).innerHTML =
+            document.getElementById(`sproutedcaliforniarice`).innerHTML;
+            white = false;
+            inrice.value = ``;
+            outwater.value = ``;
+            document.getElementById(`quantityrice`).hidden = false;
+            document.getElementById(`quantitywater`).hidden = false;
+            document.getElementById(`inputtext`).focus();
+        }
+        else {
+            document.getElementById(`quantityrice`).hidden = true;
+            document.getElementById(`quantitywater`).hidden = true;
+        }
     }
-    document.getElementById(`quantityrice`).hidden = false;
-    document.getElementById(`quantitywater`).hidden = false;
-    document.getElementById(`inputtext`).focus();
 }
 
 function handle(e){
