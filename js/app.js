@@ -10,9 +10,9 @@ let white = false;
 let seleccionar = document.querySelector(`select`);
 seleccionar.addEventListener(`change`, ricechoice);
 document.getElementById(`inputtext`).onkeydown = function() {handle(event);};
-document.getElementById('inputtext').title =
-   'Introduce cups of rice, you can use arrows keys to increase or decrease';
-   
+document.getElementById(`inputtext`).title =
+   `Introduce cups of rice, you can use arrows keys to increase or decrease`;
+
 function ricechoice() {
     let eleccion = seleccionar.value;
 

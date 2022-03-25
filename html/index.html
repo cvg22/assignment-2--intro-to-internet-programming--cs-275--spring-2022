@@ -8,7 +8,7 @@
 </head>
 <body>
   <header>
-    <h1>How to Cook Rice</h1>
+    <h1>How to Cook Rice In Two Different Ways</h1>
     <br>
     <div class="informationheader">
       <b>Rice</b> is one of the most famous food around the world. Rice is a healthy and complete energical
@@ -40,15 +40,15 @@
         </div>
     </div>
 
-
-    <label for="rice">Seleccione el tipo de arroz de hoy: </label>
-    <select id="rice">
-      <option value="">--Haga una elección--</option>
-      <option value="whiterice">WHITE RICE</option>
-      <option value="sproutedcaliforniarice">SPROUTED CALIFORNIA RICE</option>
-    </select>
-
-    <div id=opciones></div>
+    <div class="label1">
+      <label for="rice">Select the type of rice you would like to cook: </label>
+      <select id="rice">
+        <option value="">--Make a choice--</option>
+        <option value="whiterice">WHITE RICE</option>
+        <option value="sproutedcaliforniarice">SPROUTED CALIFORNIA RICE</option>
+      </select>
+    </div>
+    <div id=opciones class="opt"></div>
     <div id ="quantityrice" class="quantity">
       <label for="inputtext">Quantity of rice:</label>
       <input id = "inputtext" type="text" onchange="calculationwater()">
@@ -59,10 +59,18 @@
       <input id = "outputtext" type="text">
     </div>
   </main>
+  <footer>
+    <div class="informationfooter">
+      <p class="pf1">About:</p>
+      <ul class="ula">
+        <li>Author: <cite>Carmen Villalobos Garcia</cite></li>
+        <li>Date: March 25th, 2022</li>
+      </ul>
+    </div>
+  </footer>
 
-
-  All your HTML code must go here, after the <code>body</code> element and before the <code>script</code> element.
+  <!--All your HTML code must go here, after the <code>body</code> element and before the <code>script</code> element.-->
   <script src="js/app.js"></script><!-- DO NOT ALTER THIS LINE -->
-  <br><br><br><br>
+
 </body>
 </html>
