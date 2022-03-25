@@ -17,6 +17,7 @@
   </header>
   <main>
 
+    <div id="vacio" class="oculto"></div>
 
     <div id="whiterice" class="oculto">
       <h2>Recipe of White Rice</h2>
@@ -37,7 +38,7 @@
 
       <div class="ratio">
           Ratio(rice, water) -> 1:1.6
-        </div>
+      </div>
     </div>
 
     <div class="label1">
@@ -48,7 +49,9 @@
         <option value="sproutedcaliforniarice">SPROUTED CALIFORNIA RICE</option>
       </select>
     </div>
-    <div id=opciones class="opt"></div>
+
+    <div id="opciones" class="opt"></div>
+
     <div id ="quantityrice" class="quantity">
       <label for="inputtext">Quantity of rice:</label>
       <input id = "inputtext" type="text" onchange="calculationwater()">

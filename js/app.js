@@ -1,5 +1,5 @@
 /*window.onload = () => {
-    alert(`JavaScript Works 1`);
+    alert(`JavaScript Works`);
 };*/
 
 var inrice = document.getElementById(`inputtext`);
@@ -40,6 +40,8 @@ function ricechoice() {
         else {
             document.getElementById(`quantityrice`).hidden = true;
             document.getElementById(`quantitywater`).hidden = true;
+            document.getElementById(`opciones`).innerHTML =
+            document.getElementById(`vacio`).innerHTML;
         }
     }
 }

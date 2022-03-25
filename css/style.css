@@ -1,8 +1,9 @@
 header {
   font-size: larger;
   font-weight: 100;
-  font-family: 'Times New Roman', Times, serif;
+  font-family:  Helvetica, sans-serif;
   margin-left: 50px;
+  margin-bottom: 20px;
 }
 
 h1 {
@@ -80,7 +81,7 @@ h2 {
 }
 
 body {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family:  Helvetica, sans-serif;
   background: radial-gradient(#fff, #99d9ea);
 }
 
