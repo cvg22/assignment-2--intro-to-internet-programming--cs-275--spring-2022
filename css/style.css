@@ -24,7 +24,7 @@ h2 {
 
 .whiterice {
   margin-top: 200px;
-  margin-bottom: 100px;
+  margin-bottom: 200px;
   font-style: italic;
   font-size: large;
   font-family: Helvetica, sans-serif;
@@ -36,6 +36,26 @@ h2 {
   font-style: italic;
   font-size: large;
   font-family: Helvetica, sans-serif;
+}
+
+.quantity {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-style: italic;
+  font-size: large;
+  font-family: Helvetica, sans-serif;
+}
+
+.ratio {
+  border: 3px;
+  border-style: ridge;
+  border-color: white;
+  margin-left: 60px;
+  width: 180px;
+  padding: 10px 50px 10px 10px;
+  background-color: blue;
+  color: white;
+  font-size: small;
 }
 
 body {

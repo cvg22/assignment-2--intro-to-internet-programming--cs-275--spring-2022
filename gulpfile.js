@@ -8,12 +8,9 @@ const { src, dest, series, watch } = require(`gulp`),
     browserSync = require(`browser-sync`),
     jsCompressor = require(`gulp-uglify`),
     cleanCSS = require('gulp-clean-css'),
-    cache = require('gulp-cache'),
     reload = browserSync.reload;
 
-let clearCache = () => {
-      return cache.clearAll();
-}
+
 
 let browserChoice = `default`;
 
@@ -68,7 +65,7 @@ let serve = () => {
     browserSync({
         notify: true,
         browser: browserChoice,
-        reloadDelay: 50,
+        reloadDelay: 5000,
         server: {
             baseDir: `temp`
         }
@@ -130,7 +127,6 @@ exports.validateHTML = validateHTML;
 exports.lintCSS = lintCSS;
 exports.lintJS = lintJS;
 exports.transpileJSForDev = transpileJSForDev;
-exports.clearCache = clearCache;
 exports.compressHTML = compressHTML;
 exports.compressCSS = compressCSS;
 exports.transpileJSForProd = transpileJSForProd;

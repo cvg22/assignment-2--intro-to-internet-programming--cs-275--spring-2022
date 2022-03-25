@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How to Cook Rice456</title>
+  <title>How to Cook Rice</title>
   <link rel="stylesheet" href="css/style.css"><!-- DO NOT ALTER THIS LINE -->
 </head>
 <body>
@@ -21,6 +21,10 @@
     <div id="whiterice" class="oculto">
       <h2>Recipe of White Rice</h2>
       Combine 1 cup of rice with 2 cups of water and 1 Tbsp olive oil. Bring to a boil, then reduce heat to the lowest setting. Cook for about 18 minutes.
+
+    <div class="ratio">
+        Ratio(rice, water) -> 1:2
+      </div>
     </div>
 
     <div id="sproutedcaliforniarice" class="oculto">
@@ -30,6 +34,10 @@
 
       For softer rice:
       Increase liquid by 1/2 cup and cook time by 5 minutes.
+
+      <div class="ratio">
+          Ratio(rice, water) -> 1:1.6
+        </div>
     </div>
 
 
@@ -41,12 +49,13 @@
     </select>
 
     <div id=opciones></div>
-    <div id ="quantityrice" class="quantityrice">
+    <div id ="quantityrice" class="quantity">
+      <label for="inputtext">Quantity of rice:</label>
       <input id = "inputtext" type="text" onchange="calculationwater()">
-
-
     </div>
-    <div id ="quantitywater" class="quantitywater">
+
+    <div id ="quantitywater" class="quantity">
+      <label for="outputtext">Quantity of water:</label>
       <input id = "outputtext" type="text">
     </div>
   </main>
